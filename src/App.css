@@ -8,20 +8,22 @@ h1 {
 }
 
 button {
-  color: white;
-  background-color: green;
+  color: #000;
+  background-color: rgb(148, 215, 230);
   border: 2px solid #fff;
   font-size: 20px;
   font-weight: bold;
   height: 40px;
+  width: 200px;
   border-radius: 5px;
   padding: 6px 12px;
   cursor: pointer;
 }
 select {
-  color: white;
-  background-color: green;
+  color: #000;
+  background-color: rgb(148, 215, 230);
   height: 40px;
+  width: 200px;
   border: 2px solid #fff;
   font-size: 20px;
   font-weight: bold;
@@ -30,7 +32,7 @@ select {
   cursor: pointer;
 }
 
-select option:first-child {
+select option:nth-child(1) {
   background-color: green;
 }
 select option:nth-child(2) {
@@ -42,7 +44,7 @@ select option:last-child {
 
 select:hover,
 button:hover {
-  background-color: darkgreen;
+  background-color: rgb(195, 224, 231);
 }
 
 .card-grid {
@@ -58,4 +60,37 @@ button:hover {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .card-grid {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .settings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  button,
+  select {
+    margin: 0 auto;
+  }
+  .help {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .card-grid {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .help {
+    font-size: 12px;
+  }
 }
